@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Virtualization and Containerization</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">IS601 Docker, Linux, and Containerization</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" id="navbarDropdownHistory" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Docker, Linux, and Containerization
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="virtualization.html">What is virtualization</a>
+                    <a class="dropdown-item" href="containerization.html">What is containerization</a>
+                    <a class="dropdown-item" href="comparison.html">How do they compare</a>
+                    <a class="dropdown-item" href="webserver.html">A tutorial on how to setup a web server on your local
+                        computer using docker</a>
+                    <a class="dropdown-item" href="linux.html">A list of basic Linux commands and what they do as
+                        well as how to log into your docker container.</a>
+                    <a class="dropdown-item" href="pycharm.html">A tutorial about how to connect Docker with Pycharm
+                        to write python code.</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1>Virtualization vs Containerization</h1>
+    <img src="image/container1.jpg">
+    <p>Virtualization enables you to run multiple operating systems
+        on the hardware of a single physical server, while containerization enables you to deploy multiple applications
+        using the same operating system on a single virtual machine or server.
+        Virtual machines are great for supporting applications that require an operating system’s full
+        functionality when you want to deploy multiple applications on a server, or when you have a wide variety of
+        operating systems to manage. Containers are a better choice when your biggest priority
+        is to minimize the number of servers you’re using for multiple applications.
+    </p>
+    <p>Your use case matters too. Containers are an excellent choice for tasks with a much shorter lifecycle.
+        With their fast set up time, they are suitable for tasks that may only take a few hours.
+        Virtual machines have a longer lifecycle than containers, and are best used for longer periods of time.
+        The way forward for your organization will depend on everything from the size of your operations and
+        workflows to your IT culture and skill sets. And, containerization and virtualization technologies are coming
+        together in some interesting new ways that could influence your decision making.
+    </p>
+    <p>After taking a look at each of these technologies, the question is,
+        which one should be used? The answer is that it depends on several different points.
+        Essentially, each business and application will have different needs, requirements, and purpose.
+        The choice of virtualization versus containerization depends on the business development and operational model,
+        and the way applications are written and produced.
+    </p>
+    <img src="image/container2.jpg">
+    <p>When it comes to speed, containers were meant to significantly reduce the time needed to deploy and run an application.
+        The container starts immediately, since the operating system is already up and running, so the application will start up
+        without any noticeable delay. This is an excellent solution for a development environment, mainly,
+        as it saves time in the application testing cycle. On the other hand, virtual machines need to start the
+        entire operating system, which includes the full boot process. This will also include the startup of the services,
+        and it will take much longer than it would for a container.
+    </p>
+    <p>Containers are highly suitable for short-term application needs, as they can be set up quickly, are portable,
+        and can be started up much faster. They are, however, limited by the lack of a dedicated operating system,
+        processing, and storage resources. Containers should be used when the biggest priority is maximizing the number of
+        applications running on a minimal amount of servers. However, virtual machines are far better suited for applications
+        that need to be used for an extended period of time, since they run in a virtualized environment that is more robust and
+        versatile.
+    </p>
+    <p>Since container images are much smaller than virtual machines, they are easier to transfer and
+        save space on the host’s filesystem. Virtual machines, on the other hand, need to have a copy of the whole operating
+        system, including the kernel, system libraries, configuration files,
+        all the directories required by the operating system and all the utilities.
+        This dramatically increases the size of the image and is not that easy to share.
+        Container images can be shared in any manner of ways, and there are a number of application
+        sharing hubs on the internet. Virtual machine images do not have such centralized hubs and
+        would usually need to be uploaded to another server instead.</p>
+    <h2>Reference</h2>
+    <ul>
+        <li><a href="https://www.liquidweb.com/kb/virtualization-vs-containerization/">https://www.liquidweb.com/kb/virtualization-vs-containerization/</a>
+        </li>
+        <li>
+            <a href="https://www.burwood.com/blog-archive/containerization-vs-virtualization#:~:text=Virtualization%20enables%20you%20to%20run,single%20virtual%20machine%20or%20server.">https://www.burwood.com/blog-archive/containerization-vs-virtualization#:~:text=Virtualization%20enables%20you%20to%20run,single%20virtual%20machine%20or%20server.</a>
+        </li>
+    </ul>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./image/code.jpg" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">&copy; 2020</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Khang Tran</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: kt36@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/khangtran16/">Linked in</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Sahaj Vaidya</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: ssv47@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/sahaj-vaidya-80624b129/">Linked in</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
