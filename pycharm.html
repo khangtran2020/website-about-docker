@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Docker, Linux, and Containerization</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">IS601 Docker, Linux, and Containerization</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" id="navbarDropdownHistory" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Docker, Linux, and Containerization
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="virtualization.html">What is virtualization</a>
+                    <a class="dropdown-item" href="containerization.html">What is containerization</a>
+                    <a class="dropdown-item" href="compare.html">How do they compare</a>
+                    <a class="dropdown-item" href="webserver.html">A tutorial on how to setup a web server on your local
+                        computer using docker</a>
+                    <a class="dropdown-item" href="linux.html">A list of basic Linux commands and what they do as
+                        well as how to log into your docker container.</a>
+                    <a class="dropdown-item" href="pycharm.html">A tutorial about how to connect Docker with Pycharm
+                        to write python code.</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1>A tutorial about how to connect Docker with Pycharm to write python code</h1>
+    <p>In this tutorial, we will show you how to configure docker in Pycharm so you can develop python application and
+        create container for it. First we will introduce the prerequisites and show you the links to complete them. Then
+        we will show you how to configure docker in Pycharm and an example will follows to illustrate the run of docker
+        in Pycharm</p>
+    <h2>Prerequisites</h2>
+    <ul>Make sure these prerequisites are met:
+        <li>Docker is installed, as described on the page <a href="https://docs.docker.com">Docker Docs</a>. You can
+            install Docker on the various platforms.
+        </li>
+        <li>You have a stable Internet connection.</li>
+        <li>Before you start working with , make sure that the Docker plugin is enabled. The plugin is bundled with
+            PyCharm and is activated by default. If the plugin is not activated, enable it on the <a
+                    href="https://www.jetbrains.com/help/pycharm/plugins-settings.html">Plugins page</a> of the
+            Settings/Preferences dialog
+        </li>
+    </ul>
+    <h2>Configure Docker in Pycharm</h2>
+    <p>To configure Docker in Pycharm you can do like this: Go to the <code>setting</code> of Pycharm (or <code>preference</code>
+        for Mac). Go to <code>Build, Execution, Deployment</code> and choose <code>Docker</code></p>
+    <img src="image/dockerconf.png"/>
+    <h2>Preparing an example</h2>
+    <p>Create a Python project <code>BarcodeProject</code>, add the <code>my_script.py</code> file and enter the
+        following code:</p>
+    <img src="image/python_code.jpg"/>
+    <p>After that, put the my_script.py in to a new directory <code>src</code></p>
+    <h2>Preparing Dockerfile</h2>
+    <p>Create a new file and name it <code>Dockerfile</code>. Put the following codes into the <code>Dockerfile</code>:
+    </p>
+    <img src="image/dockerfile.jpg"/>
+    <h2>Run Docker</h2>
+    <p>To run Docker, you can simply open the <code>Dockerfile</code> and simply right click in the
+        <code>Dockerfile</code> and choose <code>Run</code></p>
+    <p>To configure the Run process, you can look to the top-right corner, and click on the <code>Add Configuration
+        ...</code>
+        button</p>
+    <img src="image/configureRun.png"/>
+    <p>The Configuration page is follow. You can change the container name, the image name in this page. Remember to
+        check the option <code>Run built image</code></p>
+    <img src="image/runconfigurepage.png"/>
+    <h2>Run Tab</h2>
+    <p>When the process of running, Pycharm will create the Run tab for run process. You can see 2 special tabs in this
+        Run tab: <code>Build log</code> and <code>Attached Console</code>. The first one logs the information about the
+        building images and containers process and the second on shows you the results of running your python codes.</p>
+    <img src="image/Runtab.png">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./image/code.jpg" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">&copy; 2020</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Khang Tran</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: kt36@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/khangtran16/">Linked in</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Sahaj Vaidya</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: ssv47@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/sahaj-vaidya-80624b129/">Linked in</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
