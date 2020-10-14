@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Docker, Linux, and Containerization</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">IS601 Docker, Linux, and Containerization</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownHistory" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Docker, Linux, and Containerization
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="virtualization.html">What is virtualization</a>
+                    <a class="dropdown-item" href="containerization.html">What is containerization</a>
+                    <a class="dropdown-item" href="compare.html">How do they compare</a>
+                    <a class="dropdown-item" href="webserver.html">A tutorial on how to setup a web server on your local
+                        computer using docker</a>
+                    <a class="dropdown-item" href="linux.html">A list of basic Linux commands and what they do as
+                        well as how to log into your docker container.</a>
+                    <a class="dropdown-item" href="pycharm.html">A tutorial about how to connect Docker with Pycharm
+                        to write python code.</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1>What is Virtualization?</h1>
+    <img src="image/what_is_virtualization.png">
+    <p>Virtualization is the process of running a virtual instance of a computer system in a layer abstracted from the
+        actual hardware.
+        Most commonly, it refers to running multiple operating systems on a computer system simultaneously. To the
+        applications running
+        on top of the virtualized machine, it can appear as if they are on their own dedicated machine, where the
+        operating system, libraries,
+        and other programs are unique to the guest virtualized system and unconnected to the host operating system which
+        sits below it.
+    </p>
+    <p>Virtualization uses software to create an abstraction layer over computer hardware that allows the hardware
+        elements of a single
+        computer—processors, memory, storage and more—to be divided into multiple virtual computers, commonly called
+        virtual machines (VMs).
+        Each VM runs its own operating system (OS) and behaves like an independent computer, even though it is running
+        on just a portion of
+        the actual underlying computer hardware.
+    </p>
+    <h2>How does virtualization work?</h2>
+    <p>Software called hypervisors separate the physical resources from the virtual environments—the things that need
+        those resources.
+        Hypervisors can sit on top of an operating system (like on a laptop) or be installed directly onto hardware
+        (like a server), which is
+        how most enterprises virtualize. Hypervisors take your physical resources and divide them up so that virtual
+        environments can use them.
+    </p>
+    <img src="image/how-virtualization-works-400x217.png">
+    <p>Resources are partitioned as needed from the physical environment to the many virtual environments. Users
+        interact with and run computations
+        within the virtual environment (typically called a guest machine or virtual machine). The virtual machine
+        functions as a single data file.
+        And like any digital file, it can be moved from one computer to another, opened in either one, and be expected
+        to work the same.
+    </p>
+    <p>When the virtual environment is running and a user or program issues an instruction that requires additional
+        resources from the physical
+        environment, the hypervisor relays the request to the physical system and caches the changes—which all happens
+        at close to native speed
+        (particularly if the request is sent through an open source hypervisor based on KVM, the Kernel-based Virtual
+        Machine).
+    </p>
+    <h2>What is Hypervisors?</h2>
+    <p>A hypervisor is the software layer that coordinates VMs. It serves as an interface between the VM and the
+        underlying physical hardware,
+        ensuring that each has access to the physical resources it needs to execute. It also ensures that the VMs don’t
+        interfere with each other
+        by impinging on each other’s memory space or compute cycles.</p>
+    <ul>There are two types of hypervisors:
+        <li>Type 1 or “bare-metal” hypervisors interact with the underlying physical resources, replacing the
+            traditional operating system altogether.
+            They most commonly appear in virtual server scenarios.
+        </li>
+        <li>Type 2 hypervisors run as an application on an existing OS. Most commonly used on endpoint devices to run
+            alternative operating systems,
+            they carry a performance overhead because they must use the host OS to access and coordinate the underlying
+            hardware resources.
+        </li>
+    </ul>
+    <h2>Benefits of virtualization?</h2>
+    <ul>Virtualization brings several benefits to data center operators and service providers:
+        <li>Resource efficiency: Before virtualization, each application server required its own dedicated physical
+            CPU—IT staff would purchase
+            and configure a separate server for each application they wanted to run. (IT preferred one application and
+            one operating system (OS) per
+            computer for reliability reasons.) Invariably, each physical server would be underused. In contrast, server
+            virtualization lets you run
+            several applications—each on its own VM with its own OS—on a single physical computer (typically an x86
+            server) without sacrificing reliability.
+            This enables maximum utilization of the physical hardware’s computing capacity.
+        </li>
+        <li>Easier management: Replacing physical computers with software-defined VMs makes it easier to use and manage
+            policies written in software.
+            This allows you to create automated IT service management workflows. For example, automated deployment and
+            configuration tools enable administrators
+            to define collections of virtual machines and applications as services, in software templates. This means
+            that they can install those services
+            repeatedly and consistently without cumbersome, time-consuming. and error-prone manual setup. Admins can use
+            virtualization security policies to
+            mandate certain security configurations based on the role of the virtual machine. Policies can even increase
+            resource efficiency by retiring unused
+            virtual machines to save on space and computing power.
+        </li>
+        <li>Minimal downtime: OS and application crashes can cause downtime and disrupt user productivity. Admins can
+            run multiple redundant virtual machines
+            alongside each other and failover between them when problems arise. Running multiple redundant physical
+            servers is more expensive.
+        </li>
+        <li>Faster provisioning: Buying, installing, and configuring hardware for each application is time-consuming.
+            Provided that the hardware is already
+            in place, provisioning virtual machines to run all your applications is significantly faster. You can even
+            automate it using management software and
+            build it into existing workflows.
+        </li>
+    </ul>
+    <h2>Reference</h2>
+    <ul>
+        <li><a href="https://www.redhat.com/en/topics/virtualization/what-is-virtualization">https://www.redhat.com/en/topics/virtualization/what-is-virtualization</a>
+        </li>
+        <li>
+            <a href="https://opensource.com/resources/virtualization">https://opensource.com/resources/virtualization</a>
+        </li>
+        <li><a href=https://www.ibm.com/cloud/learn/virtualization-a-complete-guide">https://www.ibm.com/cloud/learn/virtualization-a-complete-guide</a>
+        </li>
+    </ul>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./image/code.jpg" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">&copy; 2020</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Khang Tran</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: kt36@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/khangtran16/">Linked in</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Sahaj Vaidya</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: ssv47@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/sahaj-vaidya-80624b129/">Linked in</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
