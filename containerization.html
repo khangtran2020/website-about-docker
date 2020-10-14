@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Docker, Linux, and Containerization</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">IS601 Docker, Linux, and Containerization</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownHistory" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Docker, Linux, and Containerization
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="virtualization.html">What is virtualization</a>
+                    <a class="dropdown-item" href="containerization.html">What is containerization</a>
+                    <a class="dropdown-item" href="compare.html">How do they compare</a>
+                    <a class="dropdown-item" href="webserver.html">A tutorial on how to setup a web server on your local
+                        computer using docker</a>
+                    <a class="dropdown-item" href="linux.html">A list of basic Linux commands and what they do as
+                        well as how to log into your docker container.</a>
+                    <a class="dropdown-item" href="pycharm.html">A tutorial about how to connect Docker with Pycharm
+                        to write python code.</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1>What is Containerization?</h1>
+    <p>Containerization is the technique of bringing virtualization to the operating system level.
+        While Virtualization brings abstraction to the hardware, Containerization brings abstraction
+        to the operating system. Do note that Containerization is also a type of Virtualization.
+        Containerization is however more efficient because there is no guest OS here and utilizes a
+        host’s operating system, share relevant libraries & resources as and when needed unlike virtual
+        machines. Application specific binaries and libraries of containers run on the host kernel, which
+        makes processing and execution very fast. Even booting-up a container takes only a fraction of a
+        second. Because all the containers share, host operating system and holds only the application
+        related binaries & libraries. They are lightweight and faster than Virtual Machines.
+    </p>
+    <p>Containerization allows developers to create and deploy applications faster and more securely.
+        With traditional methods, code is developed in a specific computing environment which, when
+        transferred to a new location, often results in bugs and errors. For example, when a developer
+        transfers code from a desktop computer to a virtual machine (VM) or from a Linux to a Windows
+        operating system. Containerization eliminates this problem by bundling the application code
+        together with the related configuration files, libraries, and dependencies required for it to run.
+        This single package of software or “container” is abstracted away from the host operating system,
+        and hence, it stands alone and becomes portable—able to run across any platform or cloud,
+        free of issues.
+    </p>
+    <h2>How Containers Work?</h2>
+    <p>Containerization involves bundling an application together with all of its related configuration
+        files, libraries and dependencies required for it to run in an efficient and bug-free way across
+        different computing environments.
+    </p>
+    <img src="image/container-what-is-container.png"/>
+    <p>In containerization, containers hold all of the figurative nuts and bolts needed to run a program.
+        This runtime environment could include files, libraries and environment variables that allow a program
+        to be executable.</p>
+    <p>Because containers don’t require their own operating systems to execute applications, they consume
+        fewer resources in a server, virtual or cloud environment. Apart from understanding the framework,
+        it is also important to note the outcomes. An image is what results from the complete set of runtime
+        components in a single container. And images are deployed by a container onto a chosen host.</p>
+
+    <h2>Benefits of Containerization?</h2>
+    <img src="image/benefit_containerization.png"/>
+    <ul>Containerization offers significant benefits to developers and development teams. Among these
+        are the following:
+
+        <li>Portability: A container creates an executable package of software that is abstracted away from
+            (not tied to or dependent upon) the host operating system, and hence, is portable and able to run
+            uniformly and consistently across any platform or cloud.
+        </li>
+        <li>Agility: The open source Docker Engine for running containers started the industry standard for
+            containers with simple developer tools and a universal packaging approach that works on both Linux
+            and Windows operating systems. The container ecosystem has shifted to engines managed by the Open
+            Container Initiative (OCI). Software developers can continue using agile or DevOps tools and processes
+            for rapid application development and enhancement.
+        </li>
+        <li>Speed: Containers are often referred to as “lightweight,” meaning they share the machine’s
+            operating system (OS) kernel and are not bogged down with this extra overhead. Not only does this
+            drive higher server efficiencies, it also reduces server and licensing costs while speeding up
+            start-times as there is no operating system to boot.
+        </li>
+        <li>Fault isolation: Each containerized application is isolated and operates independently of others.
+            The failure of one container does not affect the continued operation of any other containers.
+            Development teams can identify and correct any technical issues within one container without any
+            downtime in other containers. Also, the container engine can leverage any OS security isolation
+            techniques—such as SELinux access control—to isolate faults within containers.
+        </li>
+        <li>Efficiency: Software running in containerized environments shares the machine’s OS kernel, and
+            application layers within a container can be shared across containers. Thus, containers are
+            inherently smaller in capacity than a VM and require less start-up time, allowing far more
+            containers to run on the same compute capacity as a single VM. This drives higher server
+            efficiencies, reducing server and licensing costs.
+        </li>
+        <li>Ease of management: A container orchestration platform automates the installation, scaling, and
+            management of containerized workloads and services. Container orchestration platforms can ease
+            management tasks such as scaling containerized apps, rolling out new versions of apps, and providing
+            monitoring, logging and debugging, among other functions. Kubernetes, perhaps the most popular
+            container orchestration system available, is an open source technology (originally open-sourced by
+            Google, based on their internal project called Borg) that automates Linux container functions originally.
+            Kubernetes works with many container engines, such as Docker, but it also works with any container
+            system that conforms to the Open Container Initiative (OCI) standards for container image formats and
+            runtimes.
+        </li>
+        <li>Security: The isolation of applications as containers inherently prevents the invasion of malicious
+            code from affecting other containers or the host system. Additionally, security permissions can be
+            defined to automatically block unwanted components from entering containers or limit communications
+            with unnecessary resources.
+        </li>
+    </ul>
+    <h2>Reference</h2>
+    <ul>
+        <li><a href="https://www.edureka.co/blog/docker-tutorial">https://www.edureka.co/blog/docker-tutorialn</a>
+        </li>
+        <li>
+            <a href="https://www.sumologic.com/blog/what-is-containerization/">https://www.sumologic.com/blog/what-is-containerization/</a>
+        </li>
+        <li><a href="https://www.bmc.com/blogs/what-is-a-container-containerization-explained/">https://www.bmc.com/blogs/what-is-a-container-containerization-explained/</a>
+        </li>
+    </ul>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./image/code.jpg" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">&copy; 2020</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Khang Tran</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: kt36@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/khangtran16/">Linked in</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Sahaj Vaidya</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: ssv47@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/sahaj-vaidya-80624b129/">Linked in</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
