@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Virtualization and Containerization</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">IS601 Docker, Linux, and Containerization</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" id="navbarDropdownHistory" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Docker, Linux, and Containerization
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="virtualization.html">What is virtualization</a>
+                    <a class="dropdown-item" href="containerization.html">What is containerization</a>
+                    <a class="dropdown-item" href="comparison.html">How do they compare</a>
+                    <a class="dropdown-item" href="Web Server.html">A tutorial on how to setup a web server on your local
+                        computer using docker</a>
+                    <a class="dropdown-item" href="Linux.html">A list of basic Linux commands and what they do as
+                        well as how to log into your docker container.</a>
+                    <a class="dropdown-item" href="pycharm.html">A tutorial about how to connect Docker with Pycharm
+                        to write python code.</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1>Linux Commands Tutorial</h1>
+    <p>This tutorial gives a brief introduction to beginner level Linux commands which are needed when dealing with file
+        management and terminal in Linux.
+    </p>
+    <p>
+        <ol>
+    <li>Listing file (ls) - If you want to see a list of files on your UNIX or LINUX system, use 'ls' command. It
+    shows the files/directories in your current working directory.
+    You can use 'ls -R' command to show all the files in the subdirectories as well. It is important to note here that
+    this command is case sensitive, so typing 'ls -r' will result in an error. </li>
+    <li>The 'cat' command is used to display text file. It can also be used for copying, combining and creating new text files.
+    To create a new file:
+    <ol>
+        <li>cat > filename</li>
+        <li>Add content</li>
+        <li>Press enter and new file will be created</li>
+    </ol></li>
+    <img src="image/linux1.jpg">
+    <li>The syntax to merge two files using 'cat' command is 'cat file1 file2 > new file'</li>
+    <li>The 'rm' command removes any file from the system without confirmation. To remove a file use the
+        syntax 'rm filename'</li>
+    <img src="image/linux2.jpg">
+    <li>To move a file use the command 'mv filename new_file_location' and for renaming a file 'mv filename newfilename'</li>
+    <img src="image/linux3.jpg">
+    <li>Directories can be created on Linux using the command 'mkdir directoryname'. This will create a sub directory in
+    your current working directory, which is usually your home directory.</li>
+    <img src="image/linux4.jpg">
+    <li> You can also create more than one directories at once, using 'mkdir dir1 dir2 dir3'.</li>
+    <li> To remove a directory, use the following command 'rmdir dirname'. Ensure that the directory you wish you remove
+    is empty before deletion.</li>
+    <li>To rename a directory 'mv directoryname newdirectoryname' is used.</li>
+</ol>
+    </p>
+    <p>
+        <ol>
+    <li> The 'Man' command stands for manual which is standard reference for Linux OS. It is similar
+    to help command found in other software.</li>
+    <li> The 'history' command shows all the commands that you have used in the past for the current terminal session.
+        This can help you refer to the old commands you have entered and re-used them in your operations again.</li>
+    <img src="image/linux5.jpg">
+    <li> The 'clear' command clears all the clutter on the terminal and gives you a clean window to work on,
+        just like when you launch the terminal.
+    </li>
+</ol>
+    </p>
+
+    <h2>Reference</h2>
+    <ul>
+        <li><a href="https://www.guru99.com/must-know-linux-commands.html">https://www.guru99.com/must-know-linux-commands.html</a>
+        </li>
+        <li><a href="https://www.hostinger.com/tutorials/linux-commands">https://www.hostinger.com/tutorials/linux-commands</a> </li>
+    </ul>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./image/code.jpg" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">&copy; 2020</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Khang Tran</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: kt36@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/khangtran16/">Linked in</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Sahaj Vaidya</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: ssv47@njit.edu</a></li>
+                    <li><a class="text-muted" href="https://www.linkedin.com/in/sahaj-vaidya-80624b129/">Linked in</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
